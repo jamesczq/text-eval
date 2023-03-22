@@ -24,7 +24,8 @@ class PrecisionRecallF1(Rouge):
 
 
 def get_batch_metrics(
-    array_machine_answers: List[str], array_true_answers: List[str]
+    array_machine_answers: List[str], 
+    array_true_answers: List[str]
 ) -> Dict[str, List[float]]:
 
     assert len(array_machine_answers) == len(array_true_answers)
@@ -37,7 +38,10 @@ def get_batch_metrics(
 
     for i in range(N):
         try:
-            scores = PrecisionRecallF1(array_machine_answers[i], array_true_answers[i])
+            scores = PrecisionRecallF1(
+                array_machine_answers[i], 
+                array_true_answers[i]
+            )
 
             precisions[i] = scores.precision
             recalls[i] = scores.recall
