@@ -9,7 +9,7 @@ from rouge import Rouge
 
 
 class PrecisionRecallF1(Rouge):
-    def __init__(self, machine_answer, true_answer):
+    def __init__(self, machine_answer:str, true_answer:str):
         super().__init__()
         self.precision = 0.0
         self.recall = 0.0
